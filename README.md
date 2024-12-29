@@ -4,6 +4,17 @@ A modern, interactive website for learning English through AJ Hoge's revolutiona
 
 ![English Learning Platform](assets/images/english-class.jpg)
 
+### 🚀 [Try the Live Demo](https://ajhoge-mini-stories.netlify.app/)
+
+**Love this project? Consider supporting its development!**
+
+<a href="https://www.buymeacoffee.com/onlymar" target="_blank">
+  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;">
+</a>
+
+</div>
+
+
 ## 🚀 Features
 
 - **Interactive Learning Experience**
