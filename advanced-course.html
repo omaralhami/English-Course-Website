@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Course - AJ Hoge Mini-Story Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .aspect-video {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            background: #000;
+            border-radius: 0.5rem;
+        }
+        
+        .aspect-video iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 0.5rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="min-h-screen p-4 md:p-6">
+        <!-- Header -->
+        <header class="bg-white rounded-xl shadow-sm mb-6">
+            <div class="container mx-auto px-4 py-4">
+                <div class="flex flex-wrap items-center justify-between gap-4">
+                    <!-- Left Side -->
+                    <div class="flex flex-wrap items-center gap-6">
+                        <a href="/" class="flex items-center gap-3 text-gray-800 hover:text-blue-600 transition-colors">
+                            <i class="fas fa-book-reader text-blue-600 text-2xl"></i>
+                            <span class="font-semibold text-lg">AJ Hoge</span>
+                        </a>
+                        <div class="flex items-center gap-4">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm font-medium">
+                                Advanced
+                            </span>
+                            <h1 class="text-xl font-semibold text-gray-800">Advanced Course</h1>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Side -->
+                    <div class="flex items-center gap-4">
+                        <div class="hidden md:flex items-center gap-3 px-4 py-2 bg-gray-50 rounded-lg">
+                            <div class="w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-sm text-blue-600 font-semibold">
+                                <span id="progressPercentage">0%</span>
+                            </div>
+                            <span class="text-gray-600 text-sm">Course Progress</span>
+                        </div>
+                        <a href="/" class="flex items-center gap-2 px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors">
+                            <i class="fas fa-home"></i>
+                            <span>Back to Home</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+                <!-- Sidebar -->
+                <div class="lg:col-span-1">
+                    <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                        <div class="p-6 border-b border-gray-100 bg-gradient-to-r from-blue-50 to-white">
+                            <h2 class="text-lg font-semibold text-gray-800 mb-1">Course Content</h2>
+                            <div class="flex items-center justify-between">
+                                <p class="text-sm text-gray-600">Master advanced English concepts</p>
+                                <span class="text-xs font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded-full">
+                                    <span id="completedLessonsCount">0</span>/<span id="totalLessonsCount">6</span> Complete
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <div class="p-4">
+                            <!-- Lesson List -->
+                            <div class="space-y-2" id="lessonList">
+                                <!-- Lessons will be dynamically inserted here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Section -->
+                <div class="lg:col-span-3">
+                    <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                        <!-- Video Container -->
+                        <div class="aspect-video bg-gray-900">
+                            <iframe 
+                                id="videoPlayer"
+                                class="w-full h-full"
+                                src=""
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        
+                        <!-- Video Info -->
+                        <div class="p-6 border-b border-gray-100">
+                            <div class="flex items-center justify-between mb-4">
+                                <h2 class="text-xl font-semibold text-gray-800" id="videoTitle">
+                                    Select a lesson to start
+                                </h2>
+                                <button 
+                                    id="completeButton"
+                                    class="hidden items-center gap-2 px-4 py-2 rounded-lg transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                                    onclick="toggleLessonComplete()">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span id="completeButtonText">Mark as Complete</span>
+                                </button>
+                            </div>
+                            <div class="flex flex-wrap gap-4 text-sm text-gray-600">
+                                <span class="flex items-center gap-2 bg-gray-50 px-3 py-1 rounded-full">
+                                    <i class="fas fa-clock text-blue-600"></i>
+                                    <span id="videoDuration">--:--</span>
+                                </span>
+                                <span class="flex items-center gap-2 bg-gray-50 px-3 py-1 rounded-full">
+                                    <i class="fas fa-signal text-blue-600"></i>
+                                    <span id="videoLevel">Advanced Level</span>
+                                </span>
+                                <span class="flex items-center gap-2 bg-gray-50 px-3 py-1 rounded-full">
+                                    <i class="fas fa-list-ol text-blue-600"></i>
+                                    <span id="lessonCount">Lesson - of -</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button 
+            id="sidebarToggle"
+            class="lg:hidden fixed left-6 bottom-6 w-14 h-14 flex items-center justify-center bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition-colors">
+            <i class="fas fa-list"></i>
+        </button>
+    </div>
+
+    <script>
+        // Course data with actual video links
+        const courseLessons = [
+        {
+                id: 1,
+                title: "English Mini-Story Lesson 23",
+                duration: "11:50",
+                videoUrl: "https://www.youtube.com/embed/6ebv6NnIAis",
+                completed: false
+            },
+            {
+                id: 2,
+                title: "English Mini-Story Lesson 24",
+                duration: "13:32",
+                videoUrl: "https://www.youtube.com/embed/0hWUEAKCoRg",
+                completed: false
+            },
+            {
+                id: 3,
+                title: "English Mini-Story Lesson 25",
+                duration: "14:09",
+                videoUrl: "https://www.youtube.com/embed/Kw74WlTlvGk",
+                completed: false
+            }
+            ,
+            {
+                id: 4,
+                title: "English Mini-Story Lesson 26",
+                duration: "36:34",
+                videoUrl: "https://www.youtube.com/embed/NnL1yZVMjl0",
+                completed: false
+            }
+            ,
+            {
+                id: 5,
+                title: "English Mini-Story Lesson 27",
+                duration: "12:44",
+                videoUrl: "https://www.youtube.com/embed/8kH_TCmv-4c",
+                completed: false
+            }
+            ,
+            {
+                id: 6,
+                title: "English Mini-Story Lesson 28",
+                duration: "15:17",
+                videoUrl: "https://www.youtube.com/embed/8nHun3V6qPc",
+                completed: false
+            }
+            ,
+            {
+                id: 7,
+                title: "English Mini-Story Lesson 29",
+                duration: "15:10",
+                videoUrl: "https://www.youtube.com/embed/gFoAYjFejpo", 
+                completed: false
+            }
+            ,
+            {
+                id: 8,
+                title: "English Mini-Story Lesson 30",
+                duration: "13:56",
+                videoUrl: "https://www.youtube.com/embed/7hsP5AdRpuQ", 
+                completed: false
+            }
+            ,
+            {
+                id: 9,
+                title: "English Mini-Story Lesson 31",
+                duration: "15:19",
+                videoUrl: "https://www.youtube.com/embed/a9Vv9pABSqI",
+                completed: false
+            }
+            ,
+            {
+                id: 10,
+                title: "English Mini-Story Lesson 32",
+                duration: "15:53",
+                videoUrl: "https://www.youtube.com/embed/s2ZLUv-m5IQ",
+                completed: false
+            }
+            ,
+            {
+                id: 11,
+                title: "English Mini-Story Lesson 33",
+                duration: "15:49",
+                videoUrl: "https://www.youtube.com/embed/F9VuL5iUb9g",
+                completed: false
+            }
+            ,
+            {
+                id: 12,
+                title: "English Mini-Story Lesson 34",
+                duration: "15:43",
+                videoUrl: "https://www.youtube.com/embed/S6pDJYv6YWs", 
+                completed: false
+            }
+            ,
+            {
+                id: 13,
+                title: "English Mini-Story Lesson 35",
+                duration: "15:43",
+                videoUrl: "https://www.youtube.com/embed/FRY_Gpf3CT0",
+                completed: false
+            }
+            ,
+            {
+                id: 14,
+                title: "English Mini-Story Lesson 36",
+                duration: "15:20",
+                videoUrl: "https://www.youtube.com/embed/yBpX-ti6Kq8",
+                completed: false
+            }
+            ,
+            {
+                id: 15,
+                title: "English Mini-Story Lesson 37",
+                duration: "15:59",
+                videoUrl: "https://www.youtube.com/embed/eMBB33BY0UY",
+                completed: false
+            }
+        ];
+
+        // Function to create YouTube URL with parameters
+        function createYouTubeUrl(videoId) {
+            return `https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1&playsinline=1&showinfo=0&enablejsapi=1&controls=1&color=white&iv_load_policy=3&origin=${window.location.origin}`;
+        }
+
+        // Update video URLs with parameters
+        courseLessons.forEach(lesson => {
+            const videoId = lesson.videoUrl.split('/').pop();
+            lesson.videoUrl = createYouTubeUrl(videoId);
+        });
+
+        // DOM Elements
+        const lessonList = document.getElementById('lessonList');
+        const videoPlayer = document.getElementById('videoPlayer');
+        const videoTitle = document.getElementById('videoTitle');
+        const videoDuration = document.getElementById('videoDuration');
+        const lessonCount = document.getElementById('lessonCount');
+        const progressPercentage = document.getElementById('progressPercentage');
+        const sidebarToggle = document.getElementById('sidebarToggle');
+        const completeButton = document.getElementById('completeButton');
+        const completeButtonText = document.getElementById('completeButtonText');
+
+        let currentLessonIndex = -1;
+
+        // Initialize the page
+        function initializePage() {
+            loadProgress();
+            renderLessons();
+            updateProgress();
+        }
+
+        // Render lessons in the sidebar
+        function renderLessons() {
+            lessonList.innerHTML = courseLessons.map((lesson, index) => `
+                <div class="lesson-item group relative p-4 rounded-xl hover:bg-gray-50 transition-all duration-200 cursor-pointer ${lesson.completed ? 'bg-blue-50/50 border border-blue-100' : 'border border-gray-100 hover:border-blue-100'}"
+                     onclick="playLesson(${index})" data-id="${lesson.id}">
+                    <div class="flex items-center gap-3">
+                        <div class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full ${lesson.completed ? 'bg-blue-100 text-blue-600' : 'bg-gray-100 text-gray-400'} transition-colors">
+                            <i class="fas ${lesson.completed ? 'fa-check' : 'fa-play'} text-sm"></i>
+                        </div>
+                        <div class="flex-grow min-w-0">
+                            <h3 class="text-sm font-medium text-gray-800 mb-1 truncate">${lesson.title}</h3>
+                            <div class="flex items-center gap-2 text-xs text-gray-500">
+                                <span class="flex items-center gap-1">
+                                    <i class="fas fa-clock"></i>
+                                    ${lesson.duration}
+                                </span>
+                                ${lesson.completed ? '<span class="text-blue-600 font-medium">Completed</span>' : ''}
+                            </div>
+                        </div>
+                        <div class="flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <i class="fas fa-chevron-right text-gray-400"></i>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            // Update lesson counts
+            document.getElementById('completedLessonsCount').textContent = courseLessons.filter(lesson => lesson.completed).length;
+            document.getElementById('totalLessonsCount').textContent = courseLessons.length;
+        }
+
+        // Play selected lesson
+        function playLesson(index) {
+            currentLessonIndex = index;
+            const lesson = courseLessons[index];
+            videoPlayer.src = lesson.videoUrl;
+            videoTitle.textContent = lesson.title;
+            videoDuration.textContent = lesson.duration;
+            lessonCount.textContent = `Lesson ${index + 1} of ${courseLessons.length}`;
+            updateProgress();
+            updateCompleteButtonState();
+
+            // Update active lesson in list
+            document.querySelectorAll('.lesson-item').forEach(item => {
+                item.classList.remove('bg-blue-50', 'border-blue-200');
+                if (parseInt(item.dataset.id) === lesson.id) {
+                    item.classList.add('bg-blue-50', 'border-blue-200');
+                }
+            });
+        }
+
+        function updateCompleteButtonState() {
+            if (currentLessonIndex >= 0) {
+                const lesson = courseLessons[currentLessonIndex];
+                completeButton.style.display = 'flex';
+                if (lesson.completed) {
+                    completeButton.classList.remove('bg-blue-600', 'hover:bg-blue-700', 'text-white');
+                    completeButton.classList.add('bg-gray-100', 'hover:bg-gray-200', 'text-gray-700');
+                    completeButtonText.textContent = 'Unmark as Complete';
+                } else {
+                    completeButton.classList.remove('bg-gray-100', 'hover:bg-gray-200', 'text-gray-700');
+                    completeButton.classList.add('bg-blue-600', 'hover:bg-blue-700', 'text-white');
+                    completeButtonText.textContent = 'Mark as Complete';
+                }
+            } else {
+                completeButton.style.display = 'none';
+            }
+        }
+
+        function toggleLessonComplete() {
+            if (currentLessonIndex >= 0) {
+                courseLessons[currentLessonIndex].completed = !courseLessons[currentLessonIndex].completed;
+                updateCompleteButtonState();
+                saveProgress();
+                renderLessons();
+                updateProgress();
+            }
+        }
+
+        // Update progress percentage
+        function updateProgress() {
+            const completedCount = courseLessons.filter(lesson => lesson.completed).length;
+            const percentage = Math.round((completedCount / courseLessons.length) * 100);
+            progressPercentage.textContent = `${percentage}%`;
+        }
+
+        // Save progress to localStorage
+        function saveProgress() {
+            localStorage.setItem('advancedCourseProgress', JSON.stringify(courseLessons.map(l => l.completed)));
+        }
+
+        // Load progress from localStorage
+        function loadProgress() {
+            const savedProgress = localStorage.getItem('advancedCourseProgress');
+            if (savedProgress) {
+                const completed = JSON.parse(savedProgress);
+                completed.forEach((isComplete, index) => {
+                    if (index < courseLessons.length) {
+                        courseLessons[index].completed = isComplete;
+                    }
+                });
+            }
+        }
+
+        // Mobile sidebar toggle
+        sidebarToggle.addEventListener('click', () => {
+            const sidebar = document.querySelector('.lg\\:col-span-1');
+            sidebar.classList.toggle('fixed');
+            sidebar.classList.toggle('inset-0');
+            sidebar.classList.toggle('z-50');
+            sidebar.classList.toggle('bg-white');
+        });
+
+        // Initialize the page when loaded
+        document.addEventListener('DOMContentLoaded', initializePage);
+    </script>
+</body>
+</html>
