@@ -4,6 +4,8 @@ A modern, interactive website for learning English through AJ Hoge's revolutiona
 
 ![English Learning Platform](assets/images/english-class.jpg)
 
+<div align="center">
+  
 ### 🚀 [Try the Live Demo](https://ajhoge-mini-stories.netlify.app/)
 
 **Love this project? Consider supporting its development!**
