@@ -2,7 +2,7 @@
 
 A modern, interactive website for learning English through AJ Hoge's revolutionary mini-story method. Built with HTML, Tailwind CSS, and JavaScript.
 
-![English Learning Platform](assets/images/english-class.jpg)
+![English Learning Platform](assets/images/Laptop.png)
 
 <div align="center">
   
