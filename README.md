@@ -69,7 +69,6 @@ The website is fully responsive and works seamlessly on:
 
 Have questions? Reach out to us:
 - Email: omar.alhami@outlook.com
-- Website: [AJ Hoge Mini-Story Hub](https://omaralhami.github.io/English-Course-Website)
 
 ## 📄 License
 
