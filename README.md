@@ -1,92 +1,44 @@
 # AJ Hoge Mini-Story Hub 🌟
 
-A modern, interactive website for learning English through AJ Hoge's revolutionary mini-story method. Built with HTML, Tailwind CSS, and JavaScript.
+> Interactive English learning platform using mini-story methodology
 
 ![English Learning Platform](assets/images/Laptop.png)
 
-<div align="center">
-  
-### 🚀 [Try the Live Demo](https://ajhoge-mini-stories.netlify.app/)
-
-**Love this project? Consider supporting its development!**
-
-<a href="https://www.buymeacoffee.com/onlymar" target="_blank">
-  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;">
-</a>
-
-</div>
-
+[🚀 Live Demo](https://ajhoge-mini-stories.netlify.app/)
 
 ## 🚀 Features
 
-- **Interactive Learning Experience**
-  - Video-based lessons
-  - Mini-story methodology
-  - Progress tracking system
-  - Responsive design for all devices
-
-- **Course Levels**
-  - 🌱 Beginner Course
-  - 🌿 Intermediate Course
-  - 🌳 Advanced Course
-
-- **Modern UI/UX**
-  - Clean and professional design
-  - Smooth animations
-  - Intuitive navigation
-  - Mobile-first approach
-
-## 💻 Technology Stack
-
-- HTML5
-- Tailwind CSS
-- JavaScript
-- Font Awesome Icons
-- YouTube API Integration
-
-## 📚 Course Structure
-
-Each level (Beginner, Intermediate, Advanced) includes:
-- Curated video lessons
-- Interactive mini-stories
+- Interactive video lessons
 - Progress tracking
-- Natural learning approach
+- 3 course levels
+- Mobile-first design
+- YouTube API integration
 
-## 🌟 Why Choose This Course?
+## 💻 Technologies
 
-- **Natural Learning Method**: Learn English the same way children learn their native language
-- **Interactive Stories**: Engage with interesting content that makes learning fun and effective
-- **Track Your Progress**: Monitor your improvement with our built-in progress tracking system
-- **Global Community**: Join over 42 million students worldwide
-- **Expert Method**: Based on AJ Hoge's proven teaching methodology
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
 
-## 🔧 Installation & Setup
+## 🚀 Quick Start
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/omaralhami/English-Course-Website.git
-   ```
+```bash
+# Clone repository
+git clone https://github.com/omaralhami/English-Course-Website.git
 
-2. Open `index.html` in your browser
-
-3. Start learning English naturally! 🎉
-
-## 📱 Responsive Design
-
-The website is fully responsive and works seamlessly on:
-- 📱 Mobile devices
-- 💻 Tablets
-- 🖥️ Desktop computers
-
-## 📞 Contact
-
-Have questions? Reach out to us:
-- Email: omar.alhami@outlook.com
+# Open project
+open index.html
+```
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License
 
----
+<div align="center">
+  
+**Made with ❤️ by Omar Alhami (Mar)**
+> Built with curiosity, caffeine, and late nights. If you like it, let's connect!
 
-Made with ❤️ by Omar Alhami
+[Discord](https://discord.gg/tr9BR9ZCrA) • [Instagram](https://www.instagram.com/16.72/) • [Buy me a coffee](https://buymeacoffee.com/onlymar)
+
+</div>
